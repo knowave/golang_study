@@ -19,29 +19,30 @@ func NewUserRepository(db *gorm.DB) *userRepo {
 }
 
 	// Create user 생성
-	func Create(ctx context.Context, user *entity.User) (*entity.User, error) {
+	func (u *userRepo) Create(ctx context.Context, user *entity.User) (*entity.User, error) {
 		return user, nil
 	}
 
 	// GetAllByUser 모든 user 조회
-	func GetAllByUser(ctx context.Context, user *entity.User) (*entity.User, error) {
-		return user, nil
+	func (u *userRepo) GetAllByUser(ctx context.Context, user *entity.User) (*[]entity.User, error) {
+		var users *[]entity.User
+		return users, nil
 	}
 
 	// GetUserById userId 조회
-	func GetUserById(ctx context.Context, userId uint) (*entity.User, error) {
+	func (u *userRepo) GetUserById(ctx context.Context, userId uint) (*entity.User, error) {
 		var user *entity.User
 		return user, nil
 	}
 
 	// Update 특정 user update
-	func Update(ctx context.Context, userId uint) (*entity.User, error) {
+	func (u *userRepo) Update(ctx context.Context, userId uint) (*entity.User, error) {
 		var user *entity.User
 		return user, nil
 	}
 
 	// Delete 특정 User delete
-	func Delete(ctx context.Context, userId uint) (*entity.User, error) {
+	func (u *userRepo) Delete(ctx context.Context, userId uint) (*entity.User, error) {
 		var user *entity.User
 		return user, nil
 	}
