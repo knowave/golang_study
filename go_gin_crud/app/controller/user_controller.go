@@ -19,4 +19,16 @@ func NewUserController(userService service.UserService, userRepo repository.User
 type UserControllerInterface interface {
 	// SignUp 회원가입
 	SignUp(gin *gin.Context)
+
+	// GetAllByUser 유저 전체 조회
+	GetAllByUser(gin *gin.Context)
+
+	// GetUserById 특정 유저 조회
+	GetUserById(gin *gin.Context)
+
+	// UpdateUser 특정 유저 정보 수정
+	UpdateUser(gin *gin.Context)
+
+	// DeleteUser 특정 유저 삭제
+	DeleteUser(gin *gin.Context)
 }
