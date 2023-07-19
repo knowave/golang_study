@@ -7,6 +7,7 @@ import (
 
 	"github.com/gin-gonic/gin"
 	"github.com/joho/godotenv"
+	"github.com/knowave/golang_study/tree/main/go_gin_crud/domain/service"
 	"github.com/knowave/golang_study/tree/main/go_gin_crud/infra/persistence"
 )
 
@@ -33,11 +34,13 @@ func init() {
 }
 
 func main() {
-    _, err := persistence.NewRepositories(dbHost, dbPort, dbUsername, dbName, dbPassword)
+    repositories, err := persistence.NewRepositories(dbHost, dbPort, dbUsername, dbName, dbPassword)
 	if err != nil {
-		fmt.Errorf("[Error] persistence.NewRepositories  %+v", err)
+		fmt.Errorf("[Error] persistence.NewRepositories  %v", err)
 		return
 	}
+
+    userService := service.NewUserService(repositories)
 
     r := gin.Default()
     r.GET("", func(c *gin.Context) {
