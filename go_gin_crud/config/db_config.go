@@ -10,7 +10,7 @@ import (
 
 var DB *gorm.DB
 
-func init() {
+func Init() {
 	err := godotenv.Load(".env")
 
 	if err != nil {

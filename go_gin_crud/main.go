@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import "github.com/knowave/golang_study/tree/main/go_gin_crud/go_gin_crud/config"
+
+
 
 func main() {
-	fmt.Println("hello~")
+	config.Init()
 }
