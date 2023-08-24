@@ -2,7 +2,7 @@ package entity
 
 import (
 	"github.com/jinzhu/gorm"
-	"github.com/knowave/golang_study/tree/main/go_gin_crud/go_gin_crud/domains/posts/entity"
+	entity "github.com/knowave/golang_study/tree/main/go_gin_crud/go_gin_crud/domains/posts/entities"
 )
 
 type User struct {
