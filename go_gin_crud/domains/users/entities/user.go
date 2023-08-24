@@ -7,8 +7,8 @@ import (
 
 type User struct {
     gorm.Model
-    Username string
-    Email    string
-    Password string
-    Posts    []entity.Post
+    Username string         `json:"username"`
+    Email    string         `json:"email"`
+    Password string         `json:"password"`
+    Posts    []entity.Post  `gorm:"foreignKey:UserID" json:"posts"`
 }
